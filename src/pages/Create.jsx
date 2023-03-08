@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FormField } from "../components";
-
+import "../styles/stylesheets.css";
 const Create = () => {
   // Form field object
   const [form, setForm] = useState({
@@ -62,7 +62,9 @@ const Create = () => {
           />
 
           <div>
-            {form.image && <img src={form.image} alt={form.prompt} />}
+            {form.image && (
+              <img className="image" src={form.image} alt={form.prompt} />
+            )}
 
             {/* {generatingMusic && (
               <div>
@@ -70,11 +72,13 @@ const Create = () => {
               </div>
             )} */}
           </div>
-          <div>{form.lyrics}</div>
+          <div className="lyrics">
+            <p>{form.lyrics}</p>
+          </div>
         </div>
 
         <div>
-          <button type="button" onClick={generateImage}>
+          <button type="button" className="generateBtn" onClick={generateImage}>
             {generatingMusic ? "Generating..." : "Generate"}
           </button>
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/stylesheets.css";
 const FormField = ({
   labelName,
   type,
@@ -19,6 +19,7 @@ const FormField = ({
       placeholder={placeholder}
       value={value}
       onChange={handleChange}
+      className="prompt"
       required
     />
   </div>
